@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 selection:bg-indigo-500 selection:text-white">
       <Navbar />
-
+      {/*manin */}
       <main className="flex-1">
         {/* ================= HERO SECTION ================= */}
         <section className="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32">

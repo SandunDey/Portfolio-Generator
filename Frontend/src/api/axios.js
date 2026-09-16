@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 // Base Axios instance
+//Base Axios instance
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
   headers: {
@@ -14,12 +15,12 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     // Extract a clear error message from server response if present
-    const serverMessage = error.response?.data?.message || 
-                          error.response?.data?.error || 
-                          (error.response?.data?.errors ? error.response.data.errors.map(e => e.msg).join(', ') : null) ||
-                          error.message ||
-                          'Network error. Please make sure the backend server is running.';
-    
+    const serverMessage = error.response?.data?.message ||
+      error.response?.data?.error ||
+      (error.response?.data?.errors ? error.response.data.errors.map(e => e.msg).join(', ') : null) ||
+      error.message ||
+      'Network error. Please make sure the backend server is running.';
+
     // Attach user-friendly message to error object
     error.customMessage = serverMessage;
     return Promise.reject(error);
